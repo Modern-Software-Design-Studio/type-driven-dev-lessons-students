@@ -398,7 +398,7 @@ Note that we "lift" the data constructors `Nil` and `Cons` into the type level a
 
 There is another new type feature that we use here, *associated type*. 
 
-In a Rust, the `type` keyword is overloaded. When it is used outside of a trait, it defines a type alias; when it is used inside a trait, it introduces an associated type. We can think of an associated type is a type embeded inside a trait which get instantiated when the trait is implemented. 
+In Rust, the `type` keyword is overloaded. When it is used outside of a trait, it defines a type alias; when it is used inside a trait, it introduces an associated type. We can think of an associated type is a type embeded inside a trait which get instantiated when the trait is implemented. 
 
 For instance in the `Nil` implementation of `SList`, we bind the associated type `Elem` to `A` and `Size` to `Zero` (the `Zero` type). Likewise, in the `Cons` case, we bind `Size` to `Suc<Tail::Size>` since the type argument `Tail` is a trait instance of `SList<Elem = A>`. (Note `Tail` is just another generic like `A`, except that it is bounded.) By doing so, we can enforce that the property that an `SList` created by `Cons` must be non-zero in size. 
 
