@@ -355,7 +355,7 @@ struct Suc<N>(PhantomData<N>);
 
 In the above we create two singleton struct types `Zero` and `Suc` so that we can have numbers on the type level.  For example, we could have a type `1` on the level of Rust type system as `Suc Zero`. 
 
-Note that we need to make use of a the `PhantomData` package, becaues we want `Suc` to be a type constructor (i.e. it takes another type `N` as input and returns a new type). Since it is a struct, if we omit the `PhantomData<N>`, Rust will complain that `N` is not used in `Suc` (on the value level, though we don't care). 
+Note that we need to make use of the `PhantomData` package, becaues we want `Suc` to be a type constructor (i.e. it takes another type `N` as input and returns a new type). Since it is a struct, if we omit the `PhantomData<N>`, Rust will complain that `N` is not used in `Suc` (on the value level, though we don't care). 
 
 A *phantom* type to a data type is a type parameter is not mentioned in the data type's data constructor. 
 
