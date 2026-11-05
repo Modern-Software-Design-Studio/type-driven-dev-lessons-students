@@ -6,8 +6,6 @@ in which the "sorted" invariant is only a runtime convention, into a typestate
 design in which the invariant is part of the type, so that illegal operations
 become untypeable.
 
-The final answer can be found in `examples/05_sorted_list`.
-
 Work in this directory:
 
 ```bash
