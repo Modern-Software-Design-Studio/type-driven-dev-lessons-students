@@ -29,9 +29,11 @@ Run the program and observe the output.
 ## Exercise 1: Refactor - Identify the Failing States
 
 1. State the sorted invariant as a predicate $sorted(a)$ over lists $a$, i.e. define the predicate $sorted(a)$ by completting the following predicate 
+
 $$
 \forall a. sorted(a) \iff ... 
 $$
+
 2. In the output of `main`, identify the results that violate the intended
    contracts in the table above. For each, explain which precondition was
    silently broken.
