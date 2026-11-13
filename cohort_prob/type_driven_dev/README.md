@@ -31,12 +31,13 @@ Run the program and observe the output.
 1. State the sorted invariant as a predicate $sorted(a)$ over lists $a$, i.e. define the predicate $sorted(a)$ by completting the following predicate 
 
 $$
-\forall a. sorted(a) \iff ... 
+\forall a. sorted(a) \iff ...
 $$
 
-2. In the output of `main`, identify the results that violate the intended
-   contracts in the table above. For each, explain which precondition was
-   silently broken.
+2. In the output of `main`, identify the potential risks that could 
+   leads to unexpected results, as the intended
+   contracts in the table above might not be enforced by the implementation. 
+   For each, explain which precondition was silently broken.
 3. Why is this kind of failure more dangerous than a run-time `panic!`?
    (Hint: compare with the `head` function in the notes.)
 4. For each of the five operations, state whether it (i) requires sorted
@@ -175,11 +176,11 @@ impl<T: Clone + std::fmt::Debug + PartialOrd> List<Sorted, T> {
 
 impl<T: Clone + std::fmt::Debug + Ord> List<Unsorted, T> {
     // Restore the sorted invariant.
-    fn sort(self) -> List<Sorted, T> {
+    fn sort(mut self) -> List<Sorted, T> {
         todo!()
     }
 
-    fn push(self, value: T) -> Self {
+    fn push(mut self, value: T) -> Self {
         todo!()
     }
 
